@@ -11,7 +11,7 @@ public class LevelManager : MonoBehaviour {
     bool still_trying = true;
 
     public void LoadLevel(string name){
-        Debug.Log("Level load requested for " + name);
+        //Debug.Log("Level load requested for " + name);
         SceneManager.LoadScene(name);
     }
 
