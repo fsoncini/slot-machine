@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
@@ -12,6 +13,7 @@ public class ScoreManager : MonoBehaviour {
 	public int timePerLevel = 15;
 	public GameObject youWon;
 	public GameObject gameOver;
+    
 
 
 	private float clockSpeed = 1f;
@@ -22,7 +24,7 @@ public class ScoreManager : MonoBehaviour {
 
 	void Awake () 
 	{
-		scoreText.text = ("Coin: 0");// + "/" + targetScore);
+		scoreText.text = ("Coin: 0");
 
 		InvokeRepeating("Clock", 0, clockSpeed);
 	}
@@ -34,35 +36,24 @@ public class ScoreManager : MonoBehaviour {
 		if (timePerLevel == 0)
 		{
 			CheckGameOver();
-		}
+            Application.LoadLevel("main-scene");
+        }
 	}
 
 	public void AddPoints(int pointScored)
 	{
 		score += pointScored;
-		scoreText.text = ("Coin: " + score);// + "/" + targetScore);
+		scoreText.text = ("Coin: " + score);
 	}
 
-	void CheckGameOver()
+
+
+    void CheckGameOver()
 	{
 		Time.timeScale = 0;
 		sound01.PlayOneShot(sound01.clip);
 		gameOverText.text = ("YOU WON " + score + " COINS" );
 		gameOver.SetActive(true);
-        SceneManager.LoadScene("main-scene");
-        
-		/*
-		if (score >= targetScore)
-		{
-			Time.timeScale = 0;
-			youWon.SetActive(true);
-		}
-		else
-		{
-			Time.timeScale = 0;
-			gameOver.SetActive(true);
-		}
-*/
-}
-
+          
+	}
 }

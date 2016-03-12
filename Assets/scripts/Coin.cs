@@ -13,8 +13,7 @@ public class Coin : MonoBehaviour {
 		isFree = true;
 		sound01 = GetComponent<AudioSource> ();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		if (!isFree) {
 			Destroy (gameObject);

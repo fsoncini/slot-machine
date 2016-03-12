@@ -16,7 +16,6 @@ public class Claw : MonoBehaviour {
 	private AudioSource sound02;
 
 	private Vector3 target;
-	//private int jewelValue = 1;
 	private GameObject childObject;
 	private LineRenderer lineRenderer;
 	private bool hitJewel;
@@ -80,12 +79,5 @@ public class Claw : MonoBehaviour {
 			childObject = other.gameObject;
 			other.transform.SetParent(this.transform);
 		}
-		/*
-		else if (other.gameObject.CompareTag("Rock"))
-		{
-			childObject = other.gameObject;
-			other.transform.SetParent(this.transform);
-		}
-		*/
 	}
 }

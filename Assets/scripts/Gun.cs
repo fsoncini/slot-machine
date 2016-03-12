@@ -5,12 +5,11 @@ public class Gun : MonoBehaviour {
 
 
 	public GameObject claw;
-	public bool isShooting;
 	public Gun anotherGun;
-
 	public Animator minerAnimator;
 	public Animator faceAnimator;
 	public Claw clawScript;
+	public bool isShooting;
 
 	private AudioSource sound01;
 
@@ -23,7 +22,6 @@ public class Gun : MonoBehaviour {
 		if (Input.GetButtonDown("Fire1") && !isShooting)
 		{
 			LaunchClaw();
-
 		}
 
 	}
