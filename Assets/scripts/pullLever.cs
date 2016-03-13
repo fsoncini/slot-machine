@@ -23,6 +23,11 @@ public class pullLever : MonoBehaviour {
     public int nudgesUsed = 0;
     public int maxNudges = 3;
 
+    //Game Data object
+    private GameData gameData;
+    
+
+
     [System.NonSerialized]
     public int maxBet = 10;
     public int minBet = 1;
@@ -112,6 +117,10 @@ public class pullLever : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+
+        gameData = GameData.Instance;
+        coins = gameData.getCoins();
+
         reels = new GameObject[3];
         reels[0] = GameObject.Find("topReel");
         reels[1] = GameObject.Find("centerReel");
@@ -234,6 +243,9 @@ public class pullLever : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+
+
         coinText.text = "" + coins;
         nudgeText.text = "Nudges: " + nudges;
         betText.text = "Bet: " + curBet;

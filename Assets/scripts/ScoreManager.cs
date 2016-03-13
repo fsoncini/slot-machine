@@ -36,6 +36,7 @@ public class ScoreManager : MonoBehaviour {
 		if (timePerLevel == 0)
 		{
 			CheckGameOver();
+            GameData.Instance.addCoins(score);
             Application.LoadLevel("main-scene");
         }
 	}

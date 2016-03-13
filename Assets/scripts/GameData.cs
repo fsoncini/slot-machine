@@ -28,11 +28,18 @@ public class GameData {
         return coins;
     }
 
-    public void setScore(int coins)
+    //public int setCoins()
+    //{
+    //    return coins = 100;
+    //}
+    ////////////////////////public void setScore(int coins)
+    ////////////////////////{
+    ////////////////////////    this.coins = coins;
+    ////////////////////////}
+
+    public void addCoins (int amount)
     {
-        this.coins = coins;
+        coins += amount;
     }
-
-
 
 }
