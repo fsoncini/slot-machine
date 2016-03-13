@@ -14,8 +14,6 @@ public class ScoreManager : MonoBehaviour {
 	public GameObject youWon;
 	public GameObject gameOver;
     
-
-
 	private float clockSpeed = 1f;
 	private AudioSource sound01;
 	void Start () {
